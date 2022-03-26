@@ -1,4 +1,4 @@
-import paste from './index.js'
+const paste = require('./index.js')
 
 const main = async () => {
 

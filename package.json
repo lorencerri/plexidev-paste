@@ -1,23 +1,21 @@
 {
     "name": "plexidev-paste",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "An API wrapper for paste.plexidev.org",
     "homepage": "https://paste.plexidev.org",
     "main": "index.js",
-    "type": "module",
     "scripts": {
         "test": "node test.js"
     },
     "author": "",
     "license": "MIT",
-    "dependencies": {
-        "node-fetch": "^3.2.3"
-    },
-    "devDependencies": {},
     "keywords": [
         "paste",
         "plexidev",
         "pastebin",
         "hastebin"
-    ]
+    ],
+    "dependencies": {
+        "axios": "^0.26.1"
+    }
 }

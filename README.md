@@ -1,6 +1,6 @@
 # plexidev-paste
 
-An API wrapper for paste.plexidev.org
+An API wrapper for https://paste.plexidev.org
 
 ### Basic Example
 

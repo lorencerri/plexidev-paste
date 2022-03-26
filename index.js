@@ -1,29 +1,28 @@
-import fetch from 'node-fetch';
+const axios = require('axios').default
 
 const BASE = 'https://paste-api.plexidev.org'
 
 async function post(content, options = {}) {
 	const { language = "js", title = "Untitled Paste" } = options;
 
-	const fetchOptions = {
-		method: 'POST',
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ content, title })
-	}
+	const response = await axios.post(`${BASE}/paste`, { content, title }).catch(e => e)
+	if (!response) return { error: '500: No Response' }
 
-	const response = await fetch(`${BASE}/paste`, fetchOptions).catch(e => e)
-	const data = await response.json()
+	const { data } = response;
+	if (!data) return { error: '500: No Data' }
 
 	if (language && data.url) data.url += `.${language}`
-
 	return data
 }
 
 async function get(id) {
-	const response = await fetch(`${BASE}/paste/${id}`).catch(e => e)
-	const data = await response.json()
+	const response = await axios.get(`${BASE}/paste/${id}`).catch(e => e)
+	if (!response) return { error: '500: No Response' }
+
+	const { data } = response;
+	if (!data) return { error: '500: No Data' }
 
 	return data
 }
 
-export default { post, get }
+module.exports = { post, get }
