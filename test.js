@@ -32,6 +32,7 @@ const main = async () => {
 	const noOptions = await paste.post("Hello World")
 
 	console.log(`No options returns a URL?\t ${!!noOptions.url}`)
+	console.log(post, get)
 }
 
 main();

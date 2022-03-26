@@ -3,7 +3,8 @@ const axios = require('axios').default
 const BASE = 'https://paste-api.plexidev.org'
 
 async function post(content, options = {}) {
-	const { language = "js", title = "Untitled Paste" } = options;
+	const language = options.language || "js"
+	const title = options.title || "Untitled Paste"
 
 	const response = await axios.post(`${BASE}/paste`, { content, title }).catch(e => e)
 	if (!response) return { error: '500: No Response' }
