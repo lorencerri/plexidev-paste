@@ -16,4 +16,6 @@ declare module "plexidev-paste" {
      * @param id The id of the paste to be retrieved.
      */
     function get(id: string): any;
+
+    export { post, get };
 }
