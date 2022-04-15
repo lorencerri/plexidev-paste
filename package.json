@@ -1,9 +1,10 @@
 {
     "name": "plexidev-paste",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "An API wrapper for paste.plexidev.org",
     "homepage": "https://paste.plexidev.org",
     "main": "index.js",
+    "types": "index.t.ts",
     "scripts": {
         "test": "node test.js"
     },
